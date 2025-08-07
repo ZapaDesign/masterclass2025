@@ -1,0 +1,65 @@
+.sidebar {
+	@include breakpoint(small down) {
+		margin-top: rem-calc(48);
+	}
+}
+
+.widget {
+	margin-bottom: rem-calc(20);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.widget-area {
+	padding: 10px;
+
+	@include headings {
+		font-size: 1.5rem;
+		text-align: center;
+		color: $white;
+		font-weight: 700;
+		background-color: $orange;
+		padding: rem-calc(10 5);
+		margin-bottom: rem-calc(10);
+	}
+
+	.widget {
+		background-color: $white;
+		box-shadow: rem-calc(1 1 4) rgba($black, 0.15);
+		padding-bottom: rem-calc(5);
+
+		ul {
+			list-style: none;
+			margin: 0;
+		}
+
+		li {
+			padding: rem-calc(10);
+			border-bottom: 1px solid $lightGray;
+
+			a, a:visited {
+				color: $text-color;
+			}
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+
+		.menu {
+			a {
+				line-height: 1.4;
+			}
+		}
+	}
+}
+
+.widget--bunner h2 {
+	margin-bottom: 0;
+
+	img {
+		display: block;
+	}
+}

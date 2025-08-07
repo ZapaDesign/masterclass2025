@@ -1,0 +1,428 @@
+.fd {
+    background-color: $white;
+    overflow: hidden;
+
+    &__center {
+        height: 100%;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 0 rem-calc(25) rgba(0, 0, 0, 0.25);
+
+        @include breakpoint(xlarge up) {
+            padding-bottom: rem-calc(40);
+        }
+
+        img {
+            display: block;
+            padding: rem-calc(20 50);
+        }
+    }
+}
+
+
+.fd__center__slogan {
+    color: $text-color;
+    padding: 2vw 2vw calc(2vw + 30px);
+    background-color: #fff7f7;
+    font-family: $sub-font;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+@media (max-width: 1440px) {
+    .fd__center__slogan {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .fd__center__slogan {
+        font-size: 2.125rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .fd__center__slogan {
+        font-size: 2rem;
+    }
+}
+
+.fd__center__button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to left, rgba(255, 139, 66, 0), #ff8b42 35%, #ff8b42 65%, rgba(255, 139, 66, 0));
+    color: $white;
+    border: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 15px 30px;
+    top: -30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.fd__center__button:hover {
+    z-index: 3;
+    transform: scale(1.25);
+}
+
+@media (max-width: 720px) {
+    .fd__center__button {
+        font-size: 1rem;
+    }
+}
+
+.fd__center__social {
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 10px 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.fd__center__social div {
+    display: inline-block;
+}
+
+.fd__center__social a {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.fd__center__social a svg {
+    height: 40px;
+    width: 40px;
+}
+
+.fd__center__social a svg.icon_social--vk {
+    fill: #45668e;
+}
+
+.fd__center__social a svg.icon_social--fb {
+    fill: #3b5998;
+}
+
+.fd__center__social a svg.icon_social--inst {
+    fill: #bc2a8d;
+}
+
+@media (max-width: 720px) {
+    .fd__center__social {
+        font-size: 1rem;
+        padding: 1vw;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 1440px) {
+    .fd__center__social {
+        padding: 2vw;
+        padding-top: 0;
+    }
+}
+
+.fd__qlist {
+    position: relative;
+    top: rem-calc(-45);
+    max-width: rem-calc(1440);
+    margin: 0 auto;
+    z-index: 2;
+    overflow: hidden;
+
+
+    @media (max-width: 1440px) {
+        top: 0;
+    }
+
+    li {
+        display: flex !important;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+        color: $white;
+        height: auto;
+        transition: all 0.15s ease-in-out;
+
+        a {
+            width: 100%;
+            display: block;
+            color: $white;
+            font-weight: 700;
+            font-size: 1.125em;
+        }
+
+
+        &:nth-of-type(even) {
+            background-color: $green;
+        }
+
+        &:nth-of-type(odd) {
+            background-color: $sub-color;
+        }
+
+        &:hover {
+            z-index: 3;
+            transform: scale(1.02);
+            box-shadow: rem-calc(0 0 10) rgba($black, .3);
+            background-color: #ff8b42;
+        }
+    }
+
+
+    .slick-track {
+        display: flex;
+        align-items: stretch;
+    }
+}
+
+
+.fd__list {
+    height: 100%;
+}
+
+.fd__promo__link {
+    display: none;
+    color: $text-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 25%;
+    padding: 8px 15%;
+    font-weight: 700;
+    font-size: 1.125rem;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), $white 35%, $white 65%, rgba(255, 255, 255, 0));
+
+    &:visited {
+        color: $text-color;
+    }
+}
+
+
+@media (pointer: coarse), (max-width: 480px) {
+    .fd__promo__link {
+        display: block;
+    }
+}
+
+.fd__column {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.fd__promo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+
+    &:hover {
+        z-index: 3;
+        transform: scale(1.02);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+        &__title {
+            background-color: #ff8b42;
+        }
+
+        &__link {
+            display: block;
+        }
+    }
+}
+
+
+.fd__promo__title {
+    padding: 10px;
+    background-color: $sub-color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.fd__promo__title a, .fd__promo__title a:visited {
+    color: $white;
+}
+
+@media (max-width: 1440px) {
+    .fd__promo__title {
+        font-size: 1.125rem;
+    }
+}
+
+.fd__promo__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    min-height: rem-calc(170);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.fd__promo__content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .fd__promo__content {
+        height: rem-calc(150);
+    }
+}
+
+.fd__promo--2 .fd__promo__title {
+    background-color: $green;
+}
+
+.fd__promo--3 .fd__promo__title {
+    background-color: $green;
+}
+
+
+.hero__section.hero__section--right {
+    background-position: top;
+    min-height: rem-calc(360);
+    position: relative;
+}
+
+.hero__section.hero__section--right h1 {
+    max-width: rem-calc(1280);
+    margin: 0 auto;
+    text-align: center;
+    font-size: rem-calc(36);
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (min-width: 800px) {
+    .hero__section.hero__section--right {
+        min-height: rem-calc(500);
+    }
+    .hero__section.hero__section--right h1 {
+        font-size: rem-calc(50);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .hero__section.hero__section--right {
+        min-height: rem-calc(700);
+    }
+    .hero__section.hero__section--right h1 {
+        font-size: rem-calc(80);
+    }
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center
+}
+
+@media (min-width: 600px) {
+    .hero__section {
+        min-height: rem-calc(600)
+    }
+}
+
+.hero__section--left .hero__content {
+    bottom: -100%
+}
+
+.hero__section--left:hover .hero__content {
+    bottom: 0
+}
+
+.hero__section--right .hero__content {
+    bottom: -100%
+}
+
+.hero__section--right:hover .hero__content {
+    bottom: 0
+}
+
+.hero__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem-calc(36);
+    font-weight: 700;
+    background-color: $white;
+    color: $sub-color;
+    height: rem-calc(200);
+    width: rem-calc(200);
+    border-radius: 50%;
+    margin: rem-calc(20)
+}
+
+.hero__content {
+    padding: rem-calc(20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $green;
+    color: $white;
+    transition: all 0.2s ease-in-out
+}
+
+@media (min-width: 600px) {
+    .hero__content {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding: rem-calc(40)
+    }
+}
+
+.hero__content h2 {
+    margin-bottom: rem-calc(40)
+}
+
+.hero__content a {
+    background-color: $white;
+    color: $sub-color;
+    padding: rem-calc(10 25);
+    border-radius: rem-calc(100);
+    font-size: rem-calc(20);
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    margin-bottom: rem-calc(20)
+}
+
+.hero__content a:hover {
+    background-color: $sub-color;
+    color: $white;
+}

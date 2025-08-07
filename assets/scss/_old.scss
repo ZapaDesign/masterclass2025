@@ -1,0 +1,393 @@
+* a {
+    text-decoration: none;
+}
+
+
+
+
+.page {
+    &__title {
+        display: inline-block;
+        background-color: $green;
+        padding: 0 2vw rem-calc(5);
+        color: $white;
+        font-family: $sub-font;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: rem-calc(60);
+
+        @include breakpoint(480px up) {
+            font-size: 2rem;
+        }
+
+        @include breakpoint(medium up) {
+            font-size: 2.5rem;
+        }
+
+        @include breakpoint(1440px up) {
+            font-size: 3rem;
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            box-sizing: border-box;
+            width: 200%;
+            height: rem-calc(4);
+            background-color: $green;
+            margin-right: -200%;
+            right: rem-calc(-25);
+        }
+    }
+}
+
+.blog__content, .page__content {
+    overflow: hidden;
+    background-color: $white;
+    position: relative;
+}
+
+.promo {
+    margin-top: 35px;
+    position: relative;
+    padding: 110px 0 80px;
+    background-image: url(../images/promo__pattern.svg);
+    margin-bottom: 100px;
+
+    &__title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -75px;
+        display: flex;
+        height: rem-calc(150);
+        width: rem-calc(150);
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-family: $sub-font;
+        font-size: 3rem;
+        font-weight: 700;
+        background-color: $sub-color;
+        color: $white;
+        border-radius: 75px;
+        border: 4px solid #fff7f7;
+    }
+
+
+    &__item {
+        text-align: center;
+        height: 100%;
+        background-color: $white;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        padding-bottom: 30px;
+
+        img {
+            display: block;
+            object-fit: cover;
+            height: 270px;
+            width: 100%;
+        }
+
+
+        &__title {
+            display: inline-block;
+            position: relative;
+            font-family: $sub-font;
+            font-weight: 800;
+            font-size: 2.125rem;
+            color: $sub-color;
+            background-color: $white;
+            top: -28px;
+            margin: 0 auto;
+            padding: 0 30px;
+            border-radius: rem-calc(50);
+            text-transform: uppercase;
+            border: 4px solid $sub-color;
+        }
+
+        &__description {
+            text-align: left;
+            padding: 0 30px;
+            color: $text-color;
+
+
+            p:not(:first-child) {
+                margin: 0;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+.jc-space-evenly {
+    justify-content: space-around;
+}
+
+.price {
+    &__title {
+        font-family: $sub-font;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        color: $text-color;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+
+        @include breakpoint(medium up) {
+            font-size: 3rem;
+        }
+
+        &:after, &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: 4px;
+            position: relative;
+            background-color: $sub-color;
+        }
+
+        &:before {
+            margin-left: -100%;
+            left: rem-calc(-25);
+        }
+
+        &:after {
+            margin-right: -100%;
+            right: rem-calc(-25);
+        }
+    }
+
+    &__items {
+        list-style: none;
+        margin: 0;
+    }
+
+    &__item {
+        background-color: #fafafa;
+        color: $text-color;
+
+        &:nth-child(even) {
+            background-color: $white;
+            flex-direction: row-reverse;
+
+            .price__item__img:before {
+                background-position: right 0;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 97%);
+
+                img {
+                    padding-left: 0;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        .price__item__img {
+            position: relative;
+
+            &:before {
+                content: '';
+                background: linear-gradient(90deg, rgba(250, 250, 250, 1) 3%, rgba(250, 250, 250, 0) 60%);
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+            }
+
+            img {
+                padding-left: 10px;
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__item__table {
+        display: block;
+        padding: rem-calc(60 20);
+        margin: 0;
+        width: 100%;
+
+        @include breakpoint(medium down) {
+            padding: rem-calc(30 0);
+            font-size: 0.875rem;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: center;
+            vertical-align: middle;
+
+            &:first-child {
+                text-align: left;
+            }
+        }
+
+        th {
+            background-color: $green;
+            color: $white;
+        }
+
+        td {
+            border-bottom: 1px solid $lightGray;
+        }
+    }
+
+    &__item__titile {
+        margin-bottom: 40px;
+        font-weight: 700;
+
+        font-size: 1.25rem;
+        @include breakpoint(480px up) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.contacts__info {
+    background-image: url(../images/contacts__info__img.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+
+    @include breakpoint(medium up) {
+        background-position: 20% 0;
+    }
+
+    @include breakpoint(1000px up) {
+        background-position: 40% 0;
+    }
+
+    @include breakpoint(1400px up) {
+        background-position: 100% 0;
+    }
+
+    &__text {
+        color: $text-color;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-bottom: 30px;
+
+        a {
+            color: $text-color;
+        }
+    }
+}
+
+.form {
+    background-color: #fafafa;
+    background-image: url(../images/background__strips.jpg), url(../images/background__strips.jpg);
+    background-repeat: no-repeat;
+    background-size: 3% 200%;
+    background-position: 0 0, 100% 0;
+    margin-bottom: 20px;
+    padding: 10px 6%;
+    margin-right: 0;
+    margin-left: 0;
+
+    @include breakpoint(480px up) {
+        padding: 20px 10%;
+        margin-right: 6%;
+        margin-left: 6%;
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(medium up) {
+        padding: 20px 10%;
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+
+}
+
+.contacts {
+    &__offices {
+        &__title {
+            text-align: center;
+            font-family: $sub-font;
+            font-weight: 700;
+            font-size: 3rem;
+            color: $text-color;
+            margin: 5vw auto 1vw;
+            overflow: hidden;
+
+            &::after,
+            &::before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                height: 4px;
+                position: relative;
+                background-color: $sub-color;
+            }
+
+            &::before {
+                margin-left: -100%;
+                left: rem-calc(-25);
+            }
+
+            &::after {
+                margin-right: -100%;
+                right: rem-calc(-25);
+            }
+        }
+    }
+
+    &__office {
+        margin-bottom: 5vw;
+
+        &__title {
+            font-family: "Helvetica";
+            text-align: center;
+            background-color: #fafafa;
+            padding: 30px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: $text-color;
+        }
+
+        &__map {
+            height: 100%;
+            min-height: 300px;
+        }
+
+        &__img {
+            position: relative;
+            top: -50px;
+            opacity: 0.9;
+            background-size: cover;
+            background-position: 50% 0;
+
+            ul {
+                position: relative;
+                top: -135px;
+                margin: 0;
+                list-style: none;
+                padding: 5px;
+
+                li {
+                    height: 200px;
+                    width: 200px;
+                    background-color: $white;
+                    padding: 5px;
+
+                    img {
+                        height: 200px;
+                        width: 200px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}

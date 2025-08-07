@@ -1,0 +1,53 @@
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog__item preview preview--' . get_post_type() ); ?>>
+
+    <header class="blog__item-header">
+        <?php the_title( '<h1 class="blog__item-title">', '</h1>' ); ?>
+    </header>
+
+    <div class="blog__item-content">
+        <?php the_post_thumbnail('large',array('class' => "blog__item-thumbnail"));?>
+        <?php the_excerpt(); ?>
+    </div>
+
+
+    <footer class="blog__item-footer">
+        <div class="flex">
+            <div>
+                <span class="date"><?php _e('Дата','masterclass'); echo ':' ?></span>
+                <span><?php the_date(); ?></span>
+            </div>
+            <div>
+                <span class="author"><?php _e('Автор','masterclass'); echo ':' ?></span>
+                <span><?php the_author(); ?></span>
+            </div>
+        </div>
+        <div>
+            <a class="hover:text-red-500" href="<?php echo get_permalink(); ?>">
+                <?php _e('Читати далі','masterclass') ?>
+            </a>
+        </div>
+    </footer>
+
+<!--	<div class="grid-x grid-margin-x">-->
+<!--		<div class="medium-4 small-12 cell text-center medium-text-left">-->
+<!--			<a href="--><?php //the_permalink(); ?><!--" title="--><?php //the_title_attribute(); ?><!--">-->
+<!--				--><?php //echo get_attachment_fallback( get_post_thumbnail_id(), 'medium', [ 'class' => 'preview__thumb' ] ) ?>
+<!--			</a>-->
+<!--		</div>-->
+<!--		<div class="cell auto">-->
+<!--			<h3 class="preview__title">-->
+<!--				<a href="--><?php //the_permalink(); ?><!--"-->
+<!--				   title="--><?php //echo esc_attr( sprintf( __( 'Permalink to %s', 'default' ), the_title_attribute( 'echo=0' ) ) ); ?><!--"-->
+<!--				   rel="bookmark">--><?php //echo get_the_title() ?: __( 'No title', 'default' ); ?>
+<!--				</a>-->
+<!--			</h3>-->
+<!--			--><?php //if ( is_sticky() ) : ?>
+<!--				<span class="secondary label preview__sticky">--><?php //_e( 'Sticky', 'default' ); ?><!--</span>-->
+<!--			--><?php //endif; ?>
+<!--			<div class="preview__excerpt">-->
+<!--				--><?php //the_excerpt(); // Use wp_trim_words() instead if you need specific number of words ?>
+<!--			</div>-->
+<!--			<p class="preview__meta">--><?php //echo sprintf( __( 'Written by %s on %s', 'default' ), get_the_author_posts_link(), get_the_time( get_option( 'date_format' ) ) ); ?><!--</p>-->
+<!--		</div>-->
+<!--	</div>-->
+</article>

@@ -1,0 +1,167 @@
+.footer {
+	margin-top: auto;
+	padding-top: rem-calc(32);
+
+	@include breakpoint(small down) {
+		text-align: center;
+	}
+
+	&__logo {
+		@include breakpoint(small down) {
+			margin-bottom: rem-calc(20);
+		}
+
+		img {
+			width: rem-calc(160);
+			height: auto;
+			object-fit: contain;
+		}
+	}
+
+	&__sp {
+		.stay-tuned {
+			justify-content: flex-end;
+
+			@include breakpoint(small down) {
+				justify-content: center;
+			}
+		}
+	}
+
+	&__contant {
+		color: $white;
+		font-size: 0.875rem;
+		padding-top: rem-calc(50);
+		padding-bottom: rem-calc(50);
+	}
+
+	&__branding {
+		ul {
+			margin-top: rem-calc(50);
+		}
+
+		li {
+			display: inline-block;
+
+			&:not(:last-of-type) {
+				margin-right: 20px;
+			}
+		}
+
+		svg {
+			height: rem-calc(40);
+			width: rem-calc(40);
+			fill: $orange;
+		}
+	}
+
+	&__posts {
+		ul {
+			li {
+				display: flex;
+				align-items: center;
+
+				&:not(:last-of-type) {
+					margin-bottom: 10px;
+				}
+
+				img {
+					height: 70px;
+					width: 70px;
+					margin-right: 20px;
+					border-radius: 35px;
+					border: 1px solid $white;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	&__copyright {
+		padding: rem-calc(8);
+		text-align: center;
+		color: $text-color;
+		font-size: 0.8rem;
+
+		a {
+			color: $text-color;
+			text-decoration: underline;
+		}
+	}
+
+
+	&__contacts {
+		margin: 0;
+
+		svg {
+			width: rem-calc(20);
+			height: rem-calc(20);
+			fill: #ff8b42;
+			margin-right: rem-calc(20);
+		}
+
+		ul {
+			margin: 0;
+		}
+
+		li {
+			display: flex;
+
+			&:not(:last-of-type) {
+				margin-bottom: rem-calc(10);
+			}
+
+			div {
+				flex: 1;
+			}
+
+			li:not(:last-of-type) {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.site-footer {
+	background-color: #585858;
+
+	.custom-logo {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	header {
+		font-family: $sub-font;
+		font-size: 1.5rem;
+		margin-bottom: rem-calc(50);
+	}
+
+	a {
+		display: block;
+		color: $white;
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+	}
+}
+
+.footer-menu {
+	align-items: center;
+
+	@include breakpoint(small down) {
+		justify-content: center;
+		margin-bottom: rem-calc(20);
+	}
+
+	li {
+
+		a {
+			&.button {
+				padding: $button-padding;
+				line-height: 1;
+			}
+		}
+	}
+}

@@ -1,0 +1,163 @@
+.fi {
+    background-color: $white;
+
+    &__content {
+        color: $text-color;
+        font-family: "Helvetica", sans-serif;
+        font-size: rem-calc(18);
+        padding: rem-calc(50 16);
+        margin-left: auto;
+        margin-right: auto;
+
+        @include breakpoint(1440px up) {
+            padding: calc(7vw - 45px) 0 7vw;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-weight: 600;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        strong {
+            font-family: $sub-font;
+            line-height: 1;
+            font-size: 1.75rem;
+
+            @include breakpoint(480px up) {
+                font-size: 2rem;
+            }
+
+            @include breakpoint(medium up) {
+                font-size: 3rem;
+            }
+
+            @include breakpoint(1440px down) {
+                font-size: 2.25rem;
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+        background-image: url(../images/fi__img.jpg);
+        opacity: 0.9;
+        background-size: cover;
+        display: none;
+
+        @include breakpoint(medium up) {
+            display: block;
+        }
+
+        @include breakpoint(1440px down) {
+            background-position-x: 14%;
+        }
+    }
+
+    &__cell {
+        color: $text-color;
+        padding: 5vw 5%;
+        background-color: #fff7f7;
+    }
+
+    &__cell-title {
+        text-align: center;
+        font-family: $sub-font;
+        font-size: 2rem;
+        padding-bottom: 5vw;
+        overflow: hidden;
+        font-weight: 700;
+
+        @include breakpoint(1440px up) {
+            font-size: 3rem;
+        }
+
+        &:after, &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: 4px;
+            position: relative;
+            background-color: $sub-color;
+        }
+
+        &:before {
+            margin-left: -100%;
+            left: rem-calc(-25);
+        }
+
+        &:after {
+            margin-right: -100%;
+            right: rem-calc(-25);
+        }
+    }
+
+    &__list {
+        margin: 0;
+        font-size: rem-calc(14);
+
+        @include breakpoint(1440px up) {
+            font-size: rem-calc(16);
+        }
+
+        li {
+            display: block;
+
+            img {
+                display: block;
+                max-height: 80px;
+                margin: 0 auto 2vw;
+            }
+        }
+    }
+
+    &__cell-footer {
+        text-align: center;
+        font-family: $sub-font;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-top: 3vw;
+        overflow: hidden;
+
+        @include breakpoint(1440px up) {
+            font-size: 3em;
+        }
+
+        &:after,
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: 4px;
+            position: relative;
+            background-color: $sub-color;
+        }
+
+        &:before {
+            margin-left: -100%;
+            left: rem-calc(-25);
+        }
+
+        &:after {
+            margin-right: -100%;
+            right: rem-calc(-25);
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+

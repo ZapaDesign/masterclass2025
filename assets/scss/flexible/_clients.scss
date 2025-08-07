@@ -1,0 +1,174 @@
+.clients {
+    color: $text-color;
+    background-color: $white;
+    padding: 5vh rem-calc(16);
+    background-image: url(../images/background__strips.jpg), url(../images/background__strips.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-size: rem-calc(16) 50%;
+    background-position: 0 0, 100% 0;
+
+    @include breakpoint(medium up) {
+        padding: 10vh 1.5%;
+        background-size: 1.5% 50%;
+    }
+
+    &__title {
+        margin: 0 auto;
+        text-align: center;
+        font-family: $sub-font;
+        font-size: 2rem;
+        font-weight: 700;
+        overflow: hidden;
+
+        @include breakpoint(medium up) {
+            font-size: 3rem;
+        }
+
+        &:after,
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: rem-calc(4);
+            position: relative;
+            background-color: $sub-color;
+        }
+
+        &:before {
+            margin-left: -100%;
+            left: rem-calc(-25);
+        }
+
+        &:after {
+            margin-right: -100%;
+            right: rem-calc(-25);
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: rem-calc(30 0);
+    }
+
+    &__items {
+        text-align: center;
+        list-style: none;
+        margin: rem-calc(50) auto rem-calc(70);
+        overflow: hidden;
+
+        li {
+            display: inline-block;
+            font-weight: 700;
+            vertical-align: top;
+            padding: rem-calc(0 16);
+
+            a, a:visited {
+                color: $text-color;
+            }
+        }
+    }
+
+    &__img {
+        height: rem-calc(100);
+        max-width: 100%;
+        margin-bottom: rem-calc(10);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-height: rem-calc(100);
+            max-width: 96%;
+            margin: 0 auto;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+        cursor: pointer;
+
+        & > * {
+            display: inline-block;
+        }
+    }
+
+    .grid-container {
+        max-width: rem-calc(1280);
+    }
+
+    .slider {
+        &__button {
+            position: relative;
+            height: rem-calc(20);
+            width: rem-calc(10);
+            border: none;
+            background-color: transparent;
+            margin: rem-calc(0 10);
+
+            @include breakpoint(medium up) {
+                margin: rem-calc(0 40);
+            }
+
+            &--left {
+                border-left: rem-calc(3) solid $text-color;
+                border-top: rem-calc(3) solid $text-color;
+                border-bottom: rem-calc(3) solid $text-color;
+                border-radius: rem-calc(10 0 0 10);
+
+                &:hover {
+                    border-left: rem-calc(3) solid $sub-color;
+                    border-top: rem-calc(3) solid $sub-color;
+                    border-bottom: rem-calc(3) solid $sub-color;
+                }
+            }
+
+            &--right {
+                border-right: rem-calc(3) solid $text-color;
+                border-top: rem-calc(3) solid $text-color;
+                border-bottom: rem-calc(3) solid $text-color;
+                border-radius: rem-calc(0 10 10 0);
+
+                &:hover {
+                    border-right: rem-calc(3) solid $sub-color;
+                    border-top: rem-calc(3) solid $sub-color;
+                    border-bottom: rem-calc(3) solid $sub-color;
+                }
+            }
+        }
+
+        &__dots-container ul {
+            margin: 0;
+
+            li {
+                display: inline-block;
+                height: rem-calc(10);
+                width: rem-calc(10);
+                background-color: $lightGray;
+                border-radius: rem-calc(5);
+                margin: rem-calc(0 5);
+
+                @include breakpoint(medium up) {
+                    margin: rem-calc(0 15);
+                }
+
+                &.slick-active {
+                    background-color: $text-color;
+                }
+
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+

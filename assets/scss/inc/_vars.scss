@@ -1,0 +1,93 @@
+// Project variables
+$blue: #2d22b4;
+//$red: #ff6c6c;
+$red: #ff5353;
+$pink: #fff7f7;
+$orange: #ff8b42;
+//$green: #45aaaf;
+$green: #299197;
+$gray: #505050;
+$lightGray: #dedede;
+$darkGray: #232323;
+
+$text-color: $darkGray;
+
+$main-color: $green;
+$sub-color: $red;
+
+$font: 'Helvetica', sans-serif;
+$sub-font: 'Phenomena', sans-serif;
+$fa: 'Font Awesome 6 Free';
+$fab: 'Font Awesome 6 Brands';
+
+// Font Awesome Vars
+$fa-font-path: '../fonts';
+$fa-font-display: swap;
+
+// Project mixins
+
+%css-clip {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    word-wrap: normal !important;
+    clip-path: inset(50%);
+}
+
+// Custom fonts
+// Use https://transfonter.org/ service with "Fix vertical metrics" setting
+// to get correct converted web fonts. Use woff2 format. NOT ttf or otf!
+
+@font-face {
+    font-family: 'Phenomena';
+    src: local('Phenomena'), local('Phenomena-Regular'), url('../fonts/Phenomena.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Phenomena';
+    src: url('../fonts/Phenomenabold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phenomena';
+    src: local('Phenomena ExtraBold'), local('Phenomena-ExtraBold'),
+        url('../fonts/Phenomenaextrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/HelveticaRegular/HelveticaRegular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/HelveticaBold/HelveticaBold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/HelveticaMedium/HelveticaMedium.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}

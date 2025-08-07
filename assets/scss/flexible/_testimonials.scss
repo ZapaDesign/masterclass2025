@@ -1,0 +1,102 @@
+.testimonials {
+    color: $gray;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 2rem;
+            padding-top: rem-calc(30);
+            transform: rotate(0deg);
+            writing-mode: horizontal-tb;
+
+            @include breakpoint(medium up) {
+                transform: rotate(180deg);
+                writing-mode: vertical-rl;
+                font-family: $sub-font;
+                font-size: 3rem;
+                font-weight: 700;
+                color: $text-color;
+                text-align: center;
+            }
+        }
+    }
+
+    &__items {
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        img {
+            margin-right: rem-calc(20);
+            height: rem-calc(100);
+            width: rem-calc(100);
+            border-radius: rem-calc(50);
+            object-position: 50% 0;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+    }
+
+    &__text {
+        height: rem-calc(370);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border-top: rem-calc(4) solid $green;
+        border-bottom: rem-calc(4) solid $green;
+        padding: rem-calc(80) 3% rem-calc(30);
+        margin: rem-calc(90 0 50);
+    }
+
+    &__header {
+        position: absolute;
+        top: rem-calc(-50);
+        background-color: #fff7f7;
+        text-align: center;
+        font-family: $sub-font;
+        padding: 0 5%;
+
+        p {
+            margin-bottom: 0;
+            font-size: 1.125rem;
+
+            @include breakpoint(480 up) {
+                font-size: 1.5rem;
+            }
+
+            &:first-child {
+                font-size: 1.5rem;
+                font-weight: 700;
+
+                @include breakpoint(480 up) {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    &__text--fb {
+        max-height: rem-calc(250);
+        padding: 0 5%;
+        overflow: overlay;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .slick {
+        &-dots {
+            flex-direction: column;
+        }
+    }
+}

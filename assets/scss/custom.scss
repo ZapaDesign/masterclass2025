@@ -1,0 +1,406 @@
+// Foundation
+@import "inc/foundation-custom";
+
+/* Plugins */
+// Slick
+@import 'plugins/slick.scss';
+// Fancybox
+@import 'plugins/fancybox.v3';
+//@import 'plugins/fancybox.v4';
+// Home slider
+@import 'inc/slider';
+// Animation
+@import 'inc/animation';
+
+/* ---------------------------------------
+	Typography / Forms / Inputs / Buttons
+--------------------------------------- */
+
+@import 'typography';
+
+/* ---------------------------------------
+	WooCommerce
+--------------------------------------- */
+
+//@import 'inc/woo';
+
+/* -----------------------------------------
+   WordPress Core Classes
+----------------------------------------- */
+
+@import 'inc/wp-core';
+
+/* -----------------------------------------
+   General fixes
+----------------------------------------- */
+
+html {
+	height: 100%;
+}
+
+body {
+	position: static !important;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	min-height: 100vh;
+}
+
+main {
+	display: block;
+}
+
+.page {
+	&__title {
+		display: inline-block;
+		background-color: $green;
+		padding: 0 2vw rem-calc(5);
+		color: $white;
+		font-family: $sub-font;
+		font-size: 1.75rem;
+		font-weight: 700;
+		margin-bottom: rem-calc(60);
+
+
+		@include breakpoint(480px up) {
+			font-size: 2rem;
+		}
+
+		@include breakpoint(medium up) {
+			font-size: 2.5rem;
+		}
+
+		@include breakpoint(1440px up) {
+			font-size: 3rem;
+		}
+
+		&::after {
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			box-sizing: border-box;
+			width: 200%;
+			height: rem-calc(4);
+			background-color: $green;
+			margin-right: -200%;
+			right: rem-calc(-25);
+		}
+	}
+
+	&__content {
+		overflow: hidden;
+		background-color: $white;
+		position: relative;
+	}
+}
+
+
+iframe {
+	width: 100%;
+}
+
+*:last-child {
+	margin-bottom: 0;
+}
+
+img, .woocommerce img, .woocommerce-page img {
+	transition: opacity 0.3s ease-in-out;
+
+	&.pre-lazyload, &[data-lazy-src] {
+		opacity: 0;
+	}
+
+	&.lazyloaded {
+		opacity: 1;
+	}
+}
+
+/* ---------------------------------------
+	Foundation tweaks
+--------------------------------------- */
+
+.responsive-embed {
+	display: block;
+}
+
+.grid-container {
+	width: 100%;
+	@include breakpoint($global-width down) {
+		//max-width: 100%;
+	}
+}
+
+/* -----------------------------------------
+    Contact Form
+----------------------------------------- */
+
+/*basic Gravity Form styles and fixes, if you dont need/use this -
+comment or delete styles below*/
+
+@import 'inc/gform';
+
+/* ---------------------------------------
+	Fanbcybox
+--------------------------------------- */
+
+img.fancybox-image {
+	width: 100%;
+	height: 100%;
+}
+
+/* ------------------------------------
+    Content Styles
+------------------------------------- */
+
+.main-content {
+	padding-top: rem-calc(70);
+	padding-bottom: rem-calc(48);
+
+	@include breakpoint(large up) {
+		padding-top: rem-calc(100);
+	}
+}
+
+.main-wrap {
+	overflow: hidden;
+	background-color: $white;
+}
+
+
+
+/* Preloader */
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.preloader {
+	position: fixed;
+	z-index: 100000000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: visible;
+	opacity: 1;
+	background-color: #fff;
+	color: #222;
+	transition: opacity 0.4s ease, visibility 0.4s ease;
+
+	&--hidden {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&__icon {
+		@include position-center;
+
+		&::before {
+			content: '\f1ce';
+			display: block;
+			font-family: $fa;
+			font-size: rem-calc(40);
+			font-weight: 900;
+			animation: spin 1s ease-in-out infinite;
+		}
+	}
+}
+
+
+/* Search form */
+
+.search-form {
+	position: relative;
+
+	.posts-list & {
+		margin-bottom: rem-calc(40);
+	}
+}
+
+.search-form__input {
+	padding-right: rem-calc(72);
+}
+
+.search-form__submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+	padding: rem-calc(10 12);
+	cursor: pointer;
+	//font-size: 0; // Uncomment to use icon in search button
+
+	&::after {
+		//content: "\f002"; // Uncomment to use icon in search button
+		font-family: $fa;
+		font-size: rem-calc(20);
+		font-weight: 900;
+	}
+}
+
+/* 404 page */
+
+.not-found {
+	padding-top: rem-calc(100);
+	padding-bottom: rem-calc(100);
+
+	.label {
+		margin-left: rem-calc(4);
+		padding: rem-calc(4 10);
+		background-color: $main-color;
+		color: #fff;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover {
+			background-color: darken($main-color, 8);
+			color: #fff;
+		}
+	}
+}
+
+.error_404_text {
+	padding: 2vw;
+	color: $text-color;
+
+	h1 {
+		color: $white;
+		background-color: $green;
+		margin: 0 -2vw;
+		padding: 1vw 2vw;
+		line-height: 1;
+	}
+
+	h2 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	ul {
+		line-height: 1.75;
+	}
+
+	a, a:visited {
+		color: $text-color;
+	}
+}
+
+.error_404_img {
+	min-height: 63vh;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/price-6.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.error_404_img_text {
+	position: relative;
+	left: -2vw;
+	max-width: rem-calc(400);
+	color: $white;
+	background-color: $sub-color;
+	text-align: center;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+	font-family: "Phenomena", sans-serif;
+	font-size: 3rem;
+	font-weight: 700;
+	line-height: 1.25;
+
+	div:last-child {
+		color: $text-color;
+		background-color: $white;
+		font-size: 12rem;
+	}
+}
+
+
+
+
+
+/* ---------------------------------------
+	Repeatable blocks
+--------------------------------------- */
+
+@import "repeatable-blocks";
+
+/* ---------------------------------------
+	Gutenberg default styles
+--------------------------------------- */
+
+@import "inc/gutenberg";
+
+/* ---------------------------------------
+	Gutenberg custom blocks
+--------------------------------------- */
+
+@import "blocks";
+
+/* ---------------------------------------
+	Header
+--------------------------------------- */
+
+@import 'header';
+
+/* ---------------------------------------
+	Sidebar
+--------------------------------------- */
+
+@import 'sidebar';
+
+/* ---------------------------------------
+	Footer
+--------------------------------------- */
+
+@import 'footer';
+
+/*---------------------------------------
+	TMPL: Home page
+---------------------------------------*/
+
+@import 'templates/home';
+
+/* ---------------------------------------
+	Page: Blog
+--------------------------------------- */
+
+@import 'templates/blog';
+
+/* ---------------------------------------
+	TMPL: Default page
+--------------------------------------- */
+
+@import 'templates/default';
+
+/* ---------------------------------------
+	TMPL: Contact page
+--------------------------------------- */
+
+@import 'templates/contact';
+
+/* ---------------------------------------
+	Flexible Sections Style
+--------------------------------------- */
+
+@import 'flexible';
+
+
+/* ---------------------------------------
+	OLD Styles
+--------------------------------------- */
+
+//@import 'old';
+@import 'old-grid';
+
+@import 'flexible/hero';
+@import 'flexible/clients';
+@import 'flexible/advantages';
+@import 'flexible/info-w-img';
+@import 'flexible/testimonials';
+@import 'flexible/info_w_list';

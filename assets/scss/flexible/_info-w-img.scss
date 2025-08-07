@@ -1,0 +1,139 @@
+.info-w-img {
+    color: $text-color;
+    background-color: $white;
+    padding: rem-calc(40) 11px;
+    background-image: url(../images/background__strips.jpg), url(../images/background__strips.jpg);
+    background-attachment: fixed;
+    background-size: 11px 50%;
+    background-repeat: repeat-y;
+    background-position: 0 0, 100% 0;
+
+    @include breakpoint(large up) {
+        padding: rem-calc(100) 1.5%;
+        background-size: 1.5% 50%;
+    }
+
+
+    .si {
+        &__title {
+            margin: 0 auto;
+            max-width: rem-calc(1200);
+            padding: 0 1rem;
+            font-family: $sub-font;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+
+            @include breakpoint(medium up) {
+                font-size: 2.25rem;
+            }
+        }
+
+        &__text {
+            background-color: #fff7f7;
+            padding: rem-calc(15);
+            font-size: rem-calc(18);
+            font-weight: 700;
+
+            p {
+                @include breakpoint(medium up) {
+                    padding: 0 25px;
+                }
+
+                &:first-child {
+                    padding-top: rem-calc(25);
+                    border-top: rem-calc(4) solid $sub-color;
+
+                    @include breakpoint(medium up) {
+                        padding-top: rem-calc(40);
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: rem-calc(4) solid $sub-color;
+                    padding-bottom: rem-calc(25);
+                    margin-bottom: 0;
+
+                    @include breakpoint(medium up) {
+                        padding-bottom: rem-calc(40);
+                    }
+                }
+            }
+        }
+
+        &__section {
+            &--first {
+                padding-top: rem-calc(300);
+                background-size: 120%;
+                background-image: url(../images/si__img001.jpg);
+                background-repeat: no-repeat;
+                background-position-x: 100%;
+
+                @include breakpoint(medium up) {
+                    padding-top: rem-calc(400);
+                    background-size: contain;
+
+                }
+
+                .si__text {
+                    position: relative;
+                    top: 45px;
+                }
+            }
+
+            &--second {
+                .si__text {
+
+                    @include breakpoint(large up) {
+                        margin: rem-calc(120 0);
+                    }
+
+                    p:first-child {
+                        border-top: rem-calc(4) solid $green;
+                    }
+
+                    p:last-child {
+                        border-bottom: rem-calc(4) solid $green;
+                    }
+                }
+
+
+                .si__bgimg {
+                    background-image: url(../images/si__img002.jpg);
+                    background-position-x: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    @include breakpoint(medium down) {
+                        height: rem-calc(500);
+                        background-position-y: 50%;
+                    }
+                }
+            }
+
+            &--3rd {
+                margin-top: rem-calc(50);
+                padding: rem-calc(15);
+                background-color: $sub-color;
+                color: $white;
+                font-family: $sub-font;
+                font-size: rem-calc(18);
+                font-weight: 700;
+                text-align: center;
+
+                @include breakpoint(medium up) {
+                    font-size: rem-calc(32);
+                    padding: rem-calc(25 30);
+                }
+
+                p {
+                    border-top: rem-calc(4) solid $white;
+                    border-bottom: rem-calc(4) solid $white;
+                    padding: rem-calc(20);
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
