@@ -32,6 +32,7 @@
 </div> -->
 
 <!-- BEGIN of header -->
+<div class="sentinel h-px"></div>
 <header class="header">
 	<div class="grid-container menu-grid-container">
 		<div class="grid-x grid-margin-x align-middle">

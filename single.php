@@ -28,8 +28,18 @@ get_header(); ?>
                                     </div>
                                 </div>
                                 <div class="entry__content">
+                                    <?php if (!is_user_logged_in()): ?>
                                     <?php the_content( '', true ); ?>
+                                    <?php endif; ?>
                                 </div>
+
+                                <?php if (is_user_logged_in()): ?>
+                                    <div class="flexible-sections" id="flexible-sections">
+                                        <?php while (have_rows('flexible')) : the_row();
+                                            get_template_part('parts/flexible/flexible', get_row_layout(), $args = array('id' => uniqid()));
+                                        endwhile; ?>
+                                    </div>
+                                <?php endif; ?>
                                 <?php show_template('share-links'); ?>
                             </article>
                         <?php endwhile; ?>

@@ -6,37 +6,34 @@ $footer = get_sub_field('footer');
 ?>
 
 
-<section class="si flex-sec info-w-img">
-    <div class="si__title">
-        <?php if ($header): ?>
+<section class="flex-sec info-w-img">
+    <?php if ($header): ?>
+        <h2 data-scroll class="max-w-7xl text-center mx-auto ease-btm mb-8">
             <?php echo $header; ?>
-        <?php endif; ?>
+        </h2>
+    <?php endif; ?>
+
+
+    <div class="si__section relative mb-30 px-8">
+        <?php if (isset($left['image'])) echo wp_get_attachment_image($left['image']['id'], 'full', false, ['class' => '', 'alt' => $left['image']['alt']]); ?>
+
+        <div data-scroll class="si__text lg:absolute z-10 left-20 -bottom-10 lg:w-1/2 ease-left">
+            <?php if ($left['content']) echo $left['content'] ?>
+        </div>
     </div>
-    <section class="si__section si__section--first">
-        <div bp-layout="row">
-            <div bp-layout="col 8@lg 6@xl offset-1@xl" class="si__text">
-                <?php if ($left['content']): ?>
-                    <?php echo $left['content']; ?>
-                <?php endif; ?>
-            </div>
+
+    <div class="si__section relative">
+        <?php if (isset($right['image'])) echo wp_get_attachment_image($right['image']['id'], 'full', false, ['class' => 'lg:w-1/2', 'alt' => $right['image']['alt']]); ?>
+
+        <div data-scroll class="si__text si__text lg:absolute z-10 right-20 bottom-0 lg:w-1/2 ease-right">
+            <?php if ($right['content']) echo $right['content'] ?>
         </div>
-    </section>
-    <section class="si__section si__section--second">
-        <div bp-layout="row">
-            <div bp-layout="col 6@lg 6@xl" class="si__bgimg">
-            </div>
-            <div bp-layout="col 6@lg 5@xl" class="si__text">
-                <?php if ($right['content']): ?>
-                    <?php echo $right['content']; ?>
-                <?php endif; ?>
-            </div>
+
+    </div>
+
+    <?php if ($footer): ?>
+        <div data-scroll class="h3 ease-btm bg-red text-white text-center p-8 mt-10 font-bold mx-auto lg:max-w-7xl xl:max-w-5xl">
+            <?php echo $footer ?>
         </div>
-    </section>
-    <section bp-layout="row center">
-        <div bp-layout="col 8@lg 6@xl" class="si__section--3rd">
-            <?php if ($footer): ?>
-                <?php echo $footer; ?>
-            <?php endif; ?>
-        </div>
-    </section>
+    <?php endif; ?>
 </section>

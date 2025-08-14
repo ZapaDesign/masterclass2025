@@ -849,9 +849,11 @@
         background-repeat: no-repeat;
         background-size: 3% 200%;
         background-position: 0 0, 100% 0;
-        margin-bottom: 20px;
+        margin-bottom: rem-calc(20);
         margin-right: 0;
         margin-left: 0;
+        border-radius: rem-calc(20);
+        overflow: visible;
 
         @include breakpoint(480px up) {
             margin-right: 6%;
@@ -866,6 +868,17 @@
 
         p {
             font-size: 0.875rem;
+        }
+    }
+
+    &-button {
+        background-color: $sub-color;
+        border-radius: 100%;
+
+        &.fancybox-close-small {
+            color:$white;
+            top: -22px;
+            right: 30px;
         }
     }
 }

@@ -80,14 +80,25 @@
 }
 
 .slick-arrow {
-	/* Slick arrows global styles */
-	&::before {
+	width: rem-calc(60);
+	height: rem-calc(60);
+	background-color: $white;
+	border-radius: 100%;
+	transition: all .2s ease-in-out;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
+	&:hover, &:focus {
+		background-color: $white;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	}
+
+	&::before {
+		color: $yellow;
 	}
 }
 
 .slick-prev {
-	left: rem-calc(16);
+	left: rem-calc(-16);
 
 	&::before {
 
@@ -95,7 +106,7 @@
 }
 
 .slick-next {
-	right: rem-calc(16);
+	right: rem-calc(-16);
 
 	&::before {
 

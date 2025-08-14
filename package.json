@@ -1,12 +1,15 @@
 {
   "dependencies": {
-    "foundation-sites": "~6.8.1"
+    "@tailwindcss/cli": "^4.1.11",
+    "foundation-sites": "~6.8.1",
+    "tailwindcss": "^4.1.11"
   },
   "scripts": {
     "bs": "browser-sync start --config bs-config.js",
     "watch": "sass -w assets/scss/custom.scss:assets/css/custom.css --source-map --style=compressed",
     "build:css": "sass assets/scss/:assets/css/ --style=compressed && postcss --use autoprefixer -r assets/css/*.css --no-map",
-    "build:fn-js": "webpack --config webpack.config.js"
+    "build:fn-js": "webpack --config webpack.config.js",
+    "tw": "npx @tailwindcss/cli -i ./assets/tw/input.css -o assets/css/tw.css --watch"
   },
   "browserslist": [
     "last 2 versions",

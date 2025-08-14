@@ -10,7 +10,9 @@
 // Home slider
 @import 'inc/slider';
 // Animation
-@import 'inc/animation';
+@layer utility {
+	@import 'inc/animation';
+}
 
 /* ---------------------------------------
 	Typography / Forms / Inputs / Buttons
@@ -24,6 +26,7 @@
 
 //@import 'inc/woo';
 
+
 /* -----------------------------------------
    WordPress Core Classes
 ----------------------------------------- */
@@ -33,6 +36,8 @@
 /* -----------------------------------------
    General fixes
 ----------------------------------------- */
+
+
 
 html {
 	height: 100%;
@@ -98,11 +103,11 @@ main {
 iframe {
 	width: 100%;
 }
-
-*:last-child {
-	margin-bottom: 0;
+@layer base {
+	*:last-child {
+		margin-bottom: 0;
+	}
 }
-
 img, .woocommerce img, .woocommerce-page img {
 	transition: opacity 0.3s ease-in-out;
 
@@ -403,4 +408,4 @@ img.fancybox-image {
 @import 'flexible/advantages';
 @import 'flexible/info-w-img';
 @import 'flexible/testimonials';
-@import 'flexible/info_w_list';
+//@import 'flexible/info_w_list';

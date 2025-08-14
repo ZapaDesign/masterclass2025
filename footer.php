@@ -4,7 +4,7 @@
  */
 
 $working_time = get_field('working_time', 'options');
-
+$form = get_field('lead_form', 'options');
 ?>
 <footer id="colophon" class="site-footer">
     <div class="grid-container footer__contant">
@@ -122,6 +122,11 @@ $working_time = get_field('working_time', 'options');
                 </ul>
             </div>
         </div>
+    </div>
+    <div style="display: none;" id="hidden-content">
+        <?php if (class_exists('GFAPI') && ($form) && is_array($form)): ?>
+            <?php echo do_shortcode("[gravityform id='{$form['id']}' title='false' description='false' ajax='true']"); ?>
+        <?php endif; ?>
     </div>
 </footer>
 

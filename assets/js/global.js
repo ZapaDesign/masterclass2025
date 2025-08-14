@@ -82,6 +82,7 @@
 		} );
 
 
+
 		// Init parallax
 		if ( typeof $.fn.jarallax !== 'undefined' ) {
 			$( '.jarallax' ).jarallax( {
@@ -324,8 +325,58 @@
 		})
 
 
+		const $servicesSlider = $('.js-services-slider')
+		$servicesSlider.each(function (i, currentSection) {
+			const $list = $(currentSection)
+			$list.slick({
+				fade: false,
+				// infinite: false,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				dots: false,
+				arrows: true,
+				autoplay: false,
+				// prevArrow: '<button id="prev" type="button" class="btn btn-juliet"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>',
+				// nextArrow: '<button id="next" type="button" class="btn btn-juliet"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
+				responsive: [
+					{
+						breakpoint: 1441,
+						settings: {
+							slidesToShow: 5,
 
+						}
+					},
+					{
+						breakpoint: 1201,
+						settings: {
+							slidesToShow: 4,
 
+						}
+					},
+					{
+						breakpoint: 960,
+						settings: {
+							slidesToShow: 3,
+
+						}
+					},
+					{
+						breakpoint: 720,
+						settings: {
+							slidesToShow: 2,
+
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+						}
+					}
+				]
+			})
+
+		})
 
 
 	} );

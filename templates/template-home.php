@@ -22,8 +22,8 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="flexible-sections" id="flexible-sections">
-                <?php $i = -1; while (have_rows('flexible')) : the_row(); $i++;
-                    get_template_part('parts/flexible/flexible', get_row_layout(), $args = array('id' => $i));
+                <?php while (have_rows('flexible')) : the_row();
+                    get_template_part('parts/flexible/flexible', get_row_layout(), $args = array('id' => uniqid()));
                 endwhile; ?>
             </div>
         </main>

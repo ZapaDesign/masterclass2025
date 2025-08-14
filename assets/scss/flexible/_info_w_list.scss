@@ -9,8 +9,12 @@
         margin-left: auto;
         margin-right: auto;
 
+        @include breakpoint(medium up) {
+            padding: rem-calc(200 16 50);
+        }
+
         @include breakpoint(1440px up) {
-            padding: calc(7vw - 45px) 0 7vw;
+            padding: rem-calc(200 0 50);
         }
 
         p {

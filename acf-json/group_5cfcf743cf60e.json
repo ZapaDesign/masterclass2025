@@ -167,7 +167,9 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5d8720b4c3c36",
@@ -226,6 +228,8 @@
                     "return_format": "array",
                     "ajax": 0,
                     "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
                     "parent_repeater": "field_5d8720b4c3c36"
                 },
                 {
@@ -497,6 +501,42 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_689a3d4bb20dd",
+            "label": "Form",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_689a3d38b20dc",
+            "label": "Form",
+            "name": "lead_form",
+            "aria-label": "",
+            "type": "gf_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_null": 0,
+            "allow_multiple": 0,
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -517,5 +557,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726603143
+    "modified": 1754939003
 }

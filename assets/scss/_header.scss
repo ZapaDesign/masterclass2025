@@ -1,8 +1,6 @@
 .header {
 	padding-top: rem-calc(5);
 	padding-bottom: rem-calc(5);
-	background-color: $white;
-	box-shadow: rem-calc(0 1 4) rgba($black, .15);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -25,6 +23,16 @@
 		}
 	}
 }
+
+
+//[data-scroll-dir-y="-1"] {
+//	.header {
+//		//@apply bg-white;
+//		//background-color: #fff;
+//		box-shadow: rem-calc(0 1 4) rgba($black, .15);
+//	}
+//}
+
 
 
 .admin-bar {

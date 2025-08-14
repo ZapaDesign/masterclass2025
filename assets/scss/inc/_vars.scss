@@ -9,6 +9,7 @@ $green: #299197;
 $gray: #505050;
 $lightGray: #dedede;
 $darkGray: #232323;
+$yellow: #F6C92B;
 
 $text-color: $darkGray;
 
@@ -16,7 +17,7 @@ $main-color: $green;
 $sub-color: $red;
 
 $font: 'Helvetica', sans-serif;
-$sub-font: 'Phenomena', sans-serif;
+$sub-font: Phenomena, sans-serif;
 $fa: 'Font Awesome 6 Free';
 $fab: 'Font Awesome 6 Brands';
 
@@ -64,6 +65,14 @@ $fa-font-display: swap;
     src: local('Phenomena ExtraBold'), local('Phenomena-ExtraBold'),
         url('../fonts/Phenomenaextrabold.woff2') format('woff2');
     font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phenomena';
+    src: url('../fonts/Phenomenablack.woff2') format('woff2');
+    font-weight: 900;
     font-style: normal;
     font-display: swap;
 }

@@ -254,13 +254,14 @@ add_action( 'wp_default_scripts', 'starter_remove_jquery_migrate' );
 
 function starter_scripts_and_styles() {
 	if ( ! is_admin() ) {
-		
+
 		wp_deregister_style('gform_theme_ie11');
 
 		// Load Stylesheets
 		wp_enqueue_style( 'foundation', get_template_directory_uri() . '/assets/css/foundation.css', null, filemtime( get_stylesheet_directory() . '/assets/css/foundation.css' ) );
 		wp_enqueue_style( 'select2', get_template_directory_uri() . '/assets/css/select2.min.css', null, '4.1.0' );
 		wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', null, filemtime( get_stylesheet_directory() . '/assets/css/custom.css' ) );
+		wp_enqueue_style( 'tw', get_template_directory_uri() . '/assets/css/tw.css', null, filemtime( get_stylesheet_directory() . '/assets/css/tw.css' ) );
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', null, filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 		// Load JavaScripts
@@ -963,7 +964,7 @@ add_action( 'after_setup_theme', 'theme_add_woocommerce_support' );
  */
 function get_theme_colors() {
 	// Default colors fallback.
-	// TODO Fill $palette array with main design colors to be able use in Gutenberg editor 
+	// TODO Fill $palette array with main design colors to be able use in Gutenberg editor
 	$palette = [
 		[ "name" => "Black", "slug" => "black", "color" => "#000000" ],
 		[ "name" => "White", "slug" => "white", "color" => "#ffffff" ],
@@ -976,7 +977,7 @@ function get_theme_colors() {
 /*******************************************************************************/
 
 // Gutenberg should be used by default!!!
-// TODO comment acf_gutenberg support if Classic Editor is required  
+// TODO comment acf_gutenberg support if Classic Editor is required
 //add_theme_support( 'acf_gutenberg' );
 
 // TODO uncomment acf_flexible support ONLY if Flexible Content is required by client
